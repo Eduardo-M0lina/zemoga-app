@@ -1,0 +1,38 @@
+<div class="card border-secondary mb-3" >
+  <div class="card-header">Portfolios</div>
+  <div class="card-body text-secondary">
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink] = "['/portfolios/form']">Create Portfolio</button>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>description</th>
+          <th>lastNames</th>
+          <th>names</th>
+          <th>twitterUserName</th>
+          <th>
+            update
+          </th>
+          <th>view</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let portfolio of portfolios">
+          <td>{{portfolio.id}}</td>
+          <td>{{portfolio.description}}</td>
+          <td>{{portfolio.lastNames}}</td>
+          <td>{{portfolio.names}}</td>
+          <td>{{portfolio.twitterUserName}}</td>
+          <td>
+            <button type="button" name="update" [routerLink]="['/portfolios/form', portfolio.id]" class="btn btn-primary btn-sm">update</button>
+          </td>
+          <td>
+            <button type="button" name="resume" [routerLink]="['/portfolios/resume', portfolio.id]" class="btn btn-danger btn-sm">resume</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group row">
+                <label for="description" class="text-white col-form-label col-sm-2">description</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.description" name="description">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastNames" class="col-form-label col-sm-2">lastNames</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.lastNames" name="lastNames">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="names" class="col-form-label col-sm-2">names</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.names" name="names">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="imageUrl" class="col-form-label col-sm-2">imageUrl</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.imageUrl" name="imageUrl">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="experienceSummary" class="col-form-label col-sm-2">experienceSummary</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.experienceSummary" name="experienceSummary">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="title" class="col-form-label col-sm-2">title</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.title" name="title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="userId" class="col-form-label col-sm-2">userId</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.userId" name="userId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="twitterUserId" class="col-form-label col-sm-2">twitterUserId</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.twitterUserId" name="twitterUserId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="twitterUserName" class="col-form-label col-sm-2">twitterUserName</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="portfolio.twitterUserName" name="twitterUserName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                  <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!portfolio.id else elseBlock">Create</button>
+        
+                  <ng-template #elseBlock>
+                    <button class="btn btn-primary" role="button" (click)='update()'>Update</button>
+                  </ng-template>
+                </div>
+              </div>
+        </form>
+    </div>
+</div>
